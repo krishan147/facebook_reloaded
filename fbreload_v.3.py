@@ -18,7 +18,7 @@ time_start = datetime.datetime.now()
 scope = ['https://spreadsheets.google.com/feeds']
 credentials = ServiceAccountCredentials.from_json_keyfile_name('ENTER PROJECT NAME HERE', scope)
 gc = gspread.authorize(credentials)
-wks = gc.open("BRPMEN_Bingboard").sheet1
+wks = gc.open("GOOGLE SHEET NAME").sheet1
 wks.update_acell('A20', 'Running...')
 wks.update_acell('B21', 'Will populate when process is finished')
 wks.update_acell('B22', 'Will populate when process is finished')
@@ -26,7 +26,7 @@ wks.update_acell('B23', 'Will populate when process is finished')
 wks.update_acell('B24', 'Will populate when process is finished')
 wks.update_acell('B25', 'Will populate when process is finished')
 wks.update_acell('B26', 'Will populate when process is finished')
-
+S
 wks.update_acell('D20', '')
 wks.update_acell('E20', '')
 
@@ -44,8 +44,8 @@ facebook_count = "100" # facebook max 100
 ### GET TOTAL NUMBER OF FACEBOOK ON THE SYSTEM BEFORE THE PROCESS BEGAN
 
 amvbbdo_brpmen = 'DRIVER={SQL Server};SERVER=ENTER SERVER NAME;DATABASE=ENTER DATABASE NAME;UID=ENTER USER ID;PWD=ENTER PASSWORD'
-table_name_total = "BRPMEN_Posts"
-cnxn = pyodbc.connect(amvbbdo_brpmen)
+table_name_total = "TABLE NAME"
+cnxn = pyodbc.connect(brpmen)
 cursor = cnxn.cursor()
 cursor.execute("SELECT fb_post_id FROM "+table_name_total+ " ORDER BY fb_post_id DESC")
 rows = cursor.fetchall()
@@ -63,8 +63,8 @@ str_num_of_posts_before_running_script = str(num_of_posts_before_running_script)
 ### CONNECT TO DB
 
 database_details = 'DRIVER={SQL Server};SERVER=ENTER SERVER NAME;DATABASE=ENTER DATABASE NAME;UID=ENTER USER ID;PWD=ENTER PASSWORD'
-table_name = 'BRPMEN_POSTS'
-address_book_table = 'BRPMEN_AddressBookSocialProfiles'
+table_name = 'TABLE NAME'
+address_book_table = 'TABLE NAME'
 
 ### COPY ALL FACEBOOK IDS FROM THE DATABASE TO AVOID ADDING DUPLICATES
 
